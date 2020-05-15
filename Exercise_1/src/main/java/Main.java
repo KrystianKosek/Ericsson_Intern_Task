@@ -1,4 +1,5 @@
 import com.google.common.base.Splitter;
+import lombok.extern.slf4j.Slf4j;
 import models.MyModel;
 import utils.FetchFromFile;
 import utils.SaveToFile;
@@ -10,7 +11,7 @@ import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 
-
+@Slf4j
 public class Main {
     private static final String inputFileLocation = "input.txt";
     private static final String outputFileLocation = "output.txt";
@@ -25,11 +26,10 @@ public class Main {
                 saveToFile.saveStringToFile(result, outputFileLocation);
             }
         } catch (FileNotFoundException e) {
-            System.out.println("File not found!");
+            log.error("File not found");
         } catch (IOException e) {
-            System.out.println(e.getMessage());
+            log.error(e.getMessage());
         }
-
     }
 
     /*

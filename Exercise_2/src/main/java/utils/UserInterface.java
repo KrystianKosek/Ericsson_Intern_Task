@@ -1,8 +1,11 @@
 package utils;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+@Slf4j
 public class UserInterface {
     private final Scanner scanner;
     private final Calculations calculations;
@@ -58,7 +61,7 @@ public class UserInterface {
                 inputNumber = fetchFromFile.getStringFromFile(filePath);
                 break;
             default:
-                System.out.println("Wrong choice!");
+                log.error("Wrong choice!");
                 return;
         }
         if (inputNumber.isEmpty()) {
@@ -89,10 +92,10 @@ public class UserInterface {
                     System.out.println("Bye Bye! :)");
                 }
                 else {
-                    System.out.println("Wrong choice!");
+                    log.error("Wrong Choice!");
                 }
             } catch (InputMismatchException e) {
-                System.out.println("Wrong input!");
+                log.error("Wrong input!");
                 scanner.nextLine();
             }
         } while (userFunctionChoice != 0);

@@ -1,12 +1,15 @@
 package utils;
 
+import lombok.extern.slf4j.Slf4j;
+
+@Slf4j
 public class Calculations {
     public String calculateDecimalToBinary(String input) {
         String output = "";
         try {
             output = Integer.toBinaryString(Integer.parseInt(input));
         } catch (NumberFormatException e) {
-            output = "Input: \"" + input + "\" is not a number!";
+            log.error(String.format("Input: \"%s\" is not a number!", input));
         }
         return output;
     }
@@ -16,7 +19,7 @@ public class Calculations {
         try {
             output = String.valueOf(Integer.parseInt(input, 2));
         } catch (NumberFormatException e) {
-            output = "Input: \"" + input + "\" is not a number in radix 2!";
+            log.error(String.format("Input: \"%s\" is not a number in radix 2!", input));
         }
         return output;
     }

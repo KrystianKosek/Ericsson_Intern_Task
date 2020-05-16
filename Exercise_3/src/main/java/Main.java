@@ -17,17 +17,17 @@ import java.util.concurrent.Executors;
 
 
     /*
-    Moja aplikacja przedstawia podstawową telemetrię samochodu z pomocą 4 głównych komponentów:
-        - Silnika
-        - Skrzyni biegów
-        - Hamulców
-        - Układu kierowniczego
-    Każdy komponent przechowuje conajmniej jeden controller oraz implementuje interfejs Runnable,
-    dzięki czemu komponenty uruchamiane są w osobnych wątkach i działają niezależnie od siebie.
-    Każdy controller implementuje interfejs Controller, składa się z conajmniej jednego sensora,
-    który odpowiada za kontrole poszczególnych parametrów.
-    Częstotliwość próbkowania jest losowa i odpowiada za nią klasa RandomTime.
-    W swoim rozwiązaniu do wyświetlania logów użyłem biblioteki SLF4J oraz Project Lombok.
+    My application presents basic car telemetry with the help of 4 main components:
+        - Engine
+        - Gearboxes
+        - Brakes
+        - Steering gear
+    Each component stores at least one controller and implements a Runnable interface,
+    so that components run in separate threads and work independently of each other.
+    Each controller implements a Controller interface, consisting of at least one sensor,
+    who is responsible for checking the individual parameters.
+    The sampling rate is random and the RandomTime class is responsible for it.
+    In my solution I used SLF4J and Project Lombok libraries to display logs.
      */
 
 public class Main {

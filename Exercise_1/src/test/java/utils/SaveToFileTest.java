@@ -19,7 +19,6 @@ public class SaveToFileTest {
         saveToFile = new SaveToFile();
     }
 
-
     @Test
     public void shouldPassWhenGivenEmptyListOfStrings() {
         // given
@@ -42,6 +41,20 @@ public class SaveToFileTest {
         // when
         Throwable thrown = catchThrowable(() -> {
             saveToFile.saveStringToFile(inputStrings, "");
+        });
+
+        // then
+        assertThat(thrown).doesNotThrowAnyException();
+    }
+
+    @Test
+    public void shouldPassWhenNullGiven(){
+        // given
+        String fileLocation = "test2.txt";
+
+        // when
+        Throwable thrown = catchThrowable(() -> {
+            saveToFile.saveStringToFile(null,  fileLocation);
         });
 
         // then

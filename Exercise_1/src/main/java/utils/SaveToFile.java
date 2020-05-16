@@ -8,7 +8,7 @@ import java.util.Objects;
 
 public class SaveToFile {
     public void saveStringToFile(List<String> listOfStrings, String fileLocation) throws IOException {
-        if (Objects.isNull(listOfStrings) || fileLocation.isEmpty()) {
+        if (Objects.isNull(listOfStrings) || fileLocation.isEmpty() || listOfStrings.isEmpty()) {
             return;
         }
         BufferedWriter fileWriter = new BufferedWriter(new FileWriter(fileLocation));

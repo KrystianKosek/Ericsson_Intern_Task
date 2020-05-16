@@ -49,7 +49,7 @@ public class Main {
         }
         Iterable<String> subStrings = Splitter.fixedLength(8).split(input);
         Iterator<String> iter = subStrings.iterator();
-        Pattern pattern = Pattern.compile("(\\d{4})(\\d{3})(\\d)");
+        Pattern pattern = Pattern.compile("([0-1]{4})([0-1]{3})([0-1])");
         Matcher matcher;
         int objects = 0;
         int invalidObjects = 0;
@@ -66,8 +66,8 @@ public class Main {
                 } else {
                     invalidObjects++;
                 }
-                objects++;
             }
+            objects++;
         }
         String output = listOfCorrectModels.stream()
                 .map(Objects::toString)

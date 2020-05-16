@@ -23,7 +23,7 @@ import java.util.concurrent.Executors;
         - Hamulców
         - Układu kierowniczego
     Każdy komponent przechowuje conajmniej jeden controller oraz implementuje interfejs Runnable,
-    dzięki czemu uruchamiane są w osobnych wątkach i działają niezależnie od siebie.
+    dzięki czemu komponenty uruchamiane są w osobnych wątkach i działają niezależnie od siebie.
     Każdy controller implementuje interfejs Controller, składa się z conajmniej jednego sensora,
     który odpowiada za kontrole poszczególnych parametrów.
     Częstotliwość próbkowania jest losowa i odpowiada za nią klasa RandomTime.

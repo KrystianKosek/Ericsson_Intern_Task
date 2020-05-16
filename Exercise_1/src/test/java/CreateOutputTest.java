@@ -101,7 +101,7 @@ public class CreateOutputTest {
     @Test
     public void shouldPassWhenIncorectTypeOfInputGiven() {
         // given
-        String input = "abcdefgh12345";
+        String input = "abcdefgh12345678";
 
         // when
         final List<String> result = Main.createOutput(input);
@@ -109,7 +109,7 @@ public class CreateOutputTest {
         // then
         assertThat(result).isNotEmpty();
         assertThat(result).hasSize(3);
-        assertThat(result.get(0)).isEqualTo("0");
+        assertThat(result.get(0)).isEqualTo("2");
         assertThat(result.get(1)).isEqualTo("0");
         assertThat(result.get(2)).isEqualTo("");
     }

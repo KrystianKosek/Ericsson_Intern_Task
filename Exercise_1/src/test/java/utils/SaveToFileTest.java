@@ -26,7 +26,7 @@ public class SaveToFileTest {
 
         // when
         Throwable thrown = catchThrowable(() -> {
-            saveToFile.saveStringToFile(Collections.EMPTY_LIST, fileLocation);
+            saveToFile.saveListOfStringsToFile(Collections.EMPTY_LIST, fileLocation);
         });
 
         // then
@@ -40,7 +40,7 @@ public class SaveToFileTest {
 
         // when
         Throwable thrown = catchThrowable(() -> {
-            saveToFile.saveStringToFile(inputStrings, "");
+            saveToFile.saveListOfStringsToFile(inputStrings, "");
         });
 
         // then
@@ -54,7 +54,7 @@ public class SaveToFileTest {
 
         // when
         Throwable thrown = catchThrowable(() -> {
-            saveToFile.saveStringToFile(null,  fileLocation);
+            saveToFile.saveListOfStringsToFile(null,  fileLocation);
         });
 
         // then

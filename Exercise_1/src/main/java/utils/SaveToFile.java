@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Objects;
 
 public class SaveToFile {
-    public void saveStringToFile(List<String> listOfStrings, String fileLocation) throws IOException {
+    public void saveListOfStringsToFile(List<String> listOfStrings, String fileLocation) throws IOException {
         if (Objects.isNull(listOfStrings) || fileLocation.isEmpty() || listOfStrings.isEmpty()) {
             return;
         }

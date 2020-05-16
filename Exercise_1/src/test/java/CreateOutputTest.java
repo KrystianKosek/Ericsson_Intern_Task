@@ -1,4 +1,6 @@
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
+import utils.GenerateOutput;
 
 import java.util.List;
 
@@ -11,6 +13,12 @@ public class CreateOutputTest {
     private static final String incorrectInput = "10011010";
     private static final String incorrectInput2 = "10010001";
 
+    private static GenerateOutput generateOutput;
+    @BeforeAll
+    public static void setUp(){
+        generateOutput = new GenerateOutput();
+    }
+
 
     @Test
     public void shouldPassWhenGivenCorrectInput() {
@@ -18,7 +26,7 @@ public class CreateOutputTest {
         String input = new StringBuilder(correctInput).toString();
 
         // when
-        final List<String> result = Main.createOutput(input);
+        final List<String> result = generateOutput.createOutput(input);
 
         // then
         assertThat(result).isNotEmpty();
@@ -38,7 +46,7 @@ public class CreateOutputTest {
         String input = builder.toString();
 
         // when
-        final List<String> result = Main.createOutput(input);
+        final List<String> result = generateOutput.createOutput(input);
 
         // then
         assertThat(result).isNotEmpty();
@@ -58,7 +66,7 @@ public class CreateOutputTest {
         String input = builder.toString();
 
         // when
-        final List<String> result = Main.createOutput(input);
+        final List<String> result = generateOutput.createOutput(input);
 
         // then
         assertThat(result).isNotEmpty();
@@ -78,7 +86,7 @@ public class CreateOutputTest {
         String input = builder.toString();
 
         // when
-        final List<String> result = Main.createOutput(input);
+        final List<String> result = generateOutput.createOutput(input);
 
         // then
         assertThat(result).isNotEmpty();
@@ -91,7 +99,7 @@ public class CreateOutputTest {
     @Test
     public void shouldPassWhenGivenEmptyString() {
         // when
-        final List<String> result = Main.createOutput("");
+        final List<String> result = generateOutput.createOutput("");
 
         // then
         assertThat(result).isEmpty();
@@ -104,7 +112,7 @@ public class CreateOutputTest {
         String input = "abcdefgh12345678";
 
         // when
-        final List<String> result = Main.createOutput(input);
+        final List<String> result = generateOutput.createOutput(input);
 
         // then
         assertThat(result).isNotEmpty();
